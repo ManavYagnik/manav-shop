@@ -1,0 +1,149 @@
+
+@media only screen and (max-width: 767px) {
+    
+
+    .btn-grp-L{
+        display: none;
+    }
+    
+    
+    .btn-grp-s{
+        display: block;
+    }
+    .logo-img>img{
+        width: 180px;
+        transition: 1ms;
+        padding: 30px;
+        
+    }
+
+  
+    /* .dropdown{
+        background-color: white;
+        display: block;
+        flex-direction: column;
+        float: right;
+    }
+    
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+     .btn-s{
+        border: none;
+        background-color: white;
+        color: orangered;
+        text-align: left;
+
+            }
+
+            
+    .dropbtn{
+            border: none;
+            background-color: rgb(218, 55, 55);
+            color: rgb(13, 255, 0);
+            text-align: right;
+            width: 150px;
+    }  
+    .dropdown:hover .dropdown-content{
+        display: block;
+    } 
+           
+    .dropdown:hover .dropbtn{
+        
+        background-color: white;
+        color: white;
+    } 
+
+    .btn-s{
+        width: 90px;
+    } */
+
+
+
+/* hamborger*/
+
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    
+    
+    
+  }
+
+
+/* Dropdown Button */
+.dropbtn {
+    position: relative;
+    background-color: #fafafa;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 160px;
+    top: -12px;
+    
+  }
+  .dropbtn>img{
+    float: right;
+  }
+  
+
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+  }
+
+  .menu-pic{
+    display: none;
+  }
+  
+  /* Links inside the dropdown */
+  .dp-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dp-item:hover {
+    background-color: #ffffff;
+    color: #1a0101;
+   }
+   .dp-item:hover .menu-pic {
+    display: inline-block;
+   }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: white;}
+
+
+
+
+
+            .Search-Box{
+                display: none;
+            }
+        
+        }
+
+  

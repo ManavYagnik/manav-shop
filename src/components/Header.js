@@ -1,20 +1,59 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import { productSearch } from "../redux/productAction";
-
-import './header.css';
-import './headersmall.css'
 import Mystickybar from "./Mystickybar";
+import { useEffect, useState } from "react";
+import { Fragment } from "react";
 
 const Header = () => {
     const result = useSelector((state) => state.cartData)
     const dispatch = useDispatch();
 
+    const [button, setButton] = useState(true);
+
+    const [navbar, setNavbar] = useState(false);
+
+    const showButton = () =>{
+        if(window.innerWidth <= 960){
+            setButton(false);
+        }
+        else{
+            setButton(true);
+        }
+    };
+
+
+
+    window.addEventListener('resize', showButton);
+ 
+
+
+    useEffect(() =>{
+        showButton();
+    }, [])
+
+    const changeBackground = () => {
+        if(window.scrollY >= 80){
+            setNavbar(true);
+        }
+        else{
+            setNavbar(false);
+        }
+    };
+   
+    window.addEventListener('scroll', changeBackground);
+  
+
     console.log("redux data in header", result)
-    return (<div className=" header-container  ">
+
+    return (
+    
+   
+    <div className= 'header-container'>
+        
         <div className="logo" >
             <Link to="/">
-                <span className="logo-img">   <img src="./images/logo.png" alt="" /></span>
+                <span className="logo-img">   <img src="./images/infoware-logo.webp" alt="" /></span>
             </Link>
         </div>
 
@@ -22,11 +61,27 @@ const Header = () => {
             <div class="dropdown">
                 <button className="btn" >Edible Oils</button>
                 <div class="dropdown-content">
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span> <span className="large-dropdown-text"> Fortune Soya Health Oil </span></div>
+                    <Link to='/fortunesoyaoil' class="link-text">
+                        <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span> <span className="large-dropdown-text"> Fortune Soya Health Oil </span></div>
+                    </Link>
+
+
+                    <Link to='/comingsoon' class="link-text">
                     <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text">Fortune Sunlite Sunflower Oil</span></div>
+                    </Link>
+
+                    <Link to='/comingsoon' class="link-text">
                     <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /> </span><span className="large-dropdown-text"> Fortune Kachi Ghani Mustard Oil</span></div>
+                    </Link>
+
+                    <Link to='/comingsoon' class="link-text">
                     <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text"> Fortune Rice Brain Oil</span></div>
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text"> Fortune Filtered Groundnut Oil</span></div>
+                    </Link>
+
+                    <Link to='/comingsoon' class="link-text">
+                 
+                   <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text"> Fortune Filtered Groundnut Oil</span></div>
+                   </Link>
                 </div>
             </div>
 
@@ -36,30 +91,59 @@ const Header = () => {
             <div class="dropdown">
                 <button className="btn">Foods</button>
                 <div class="dropdown-content">
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span> <span className="large-dropdown-text">Fortune Chakki Fresh Atta</span></div>
+                    <Link to='/chakkifreshaata' class="link-text">
+                        <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/Chakki-fresh-atta-FOP-1.webp" alt="" /></span> <span className="large-dropdown-text">Fortune Chakki Fresh Atta</span></div>
+                    </Link>
+
+                    <Link to="/comingsoon" class="link-text">
                     <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text">Fortune Rice</span></div>
+                    </Link>
+
+                    <Link to="/comingsoon" class="link-text">
                     <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /> </span><span className="large-dropdown-text">Fortune Soya Chunks</span></div>
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text">Fortune Chana Besan</span></div>
+                    </Link>
+
+                    <Link to="/comingsoon" class="link-text">
+                   <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text">Fortune Chana Besan</span></div>
+                   </Link>
+
+
+                   <Link to="/comingsoon" class="link-text">
                     <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dp-img1.png" alt="" /></span><span className="large-dropdown-text">Fortune Sugar</span></div>
-                </div>
+                    </Link>
+                 </div>
             </div>
 
 
             <div class="dropdown">
+          
                 <button className="btn">Ready to Cook</button>
+              
                 <div class="dropdown-content">
-                    <div class="dp-item-1"> 
-                    <span className="large-dropdown-text-1">Fortune Chakki Fresh Atta  </span></div>
-                   
-                   
+                <Link to="/comingsoon" class="link-text">
                     <div class="dp-item-1">
-                    <span className="large-dropdown-text-1">Fortune Soya Chunks</span></div>
+                   
+                        <span className="large-dropdown-text-1">Fortune Chakki Fresh Atta  </span>
+                        </div>
+                </Link>
+
+                    <div class="dp-item-1">
+                        <span className="large-dropdown-text-1">Fortune Soya Chunks</span></div>
 
                 </div>
 
             </div>
-            <button className="btn">Fortunes Recipes</button>
+            <Link to="/products">
+                <button className="btn">Products</button>
+            </Link>
+           
+         
+         <Link to="/addproductsform">
+            <button className="btn" >Add Products</button>
+            </Link>
+            <Link to="/comingsoon" class="link-text">
             <button className="btn">About US</button>
+            </Link>
             <Link to="/contact">
                 <button className="btn">Contact Us</button>
             </Link>
@@ -75,14 +159,22 @@ const Header = () => {
         <span className="btn-grp-s ">
             <div class="dropdown">
 
-                <button class="dropbtn"><img src="./images/dropdown/ham.png" width="30px" /></button>
+                <button class="dropbtn"><img src="./images/dropdown/ham.png" width="30px" alt="" /></button>
 
                 <div class="dropdown-content">
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dropdown/dp-img1.png" alt="" /></span> <a> items </a></div>
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dropdown/dp-img1.png" alt="" /></span>menu items</div>
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dropdown/dp-img1.png" alt="" /> </span> items</div>
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dropdown/dp-img1.png" alt="" /></span> items</div>
-                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="images/dropdown/dp-img1.png" alt="" /></span> items</div>
+                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="" alt="" /></span>  <Link to="/products">
+                <button className="btn">Products</button>
+            </Link> </div>
+                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="" alt="" /></span>  <Link to="/addproductsform">
+            <button className="btn" >Add Products</button>
+            </Link></div>
+                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="" alt="" /> </span> <Link to="/comingsoon" class="link-text">
+            <button className="btn">About US</button>
+            </Link></div>
+                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="" alt="" /></span>   <Link to="/contact">
+                <button className="btn">Contact Us</button>
+            </Link></div>
+                    <div class="dp-item"><span class="menu-pic"><img width="30px" src="" alt="" /></span> items</div>
 
 
                 </div>
@@ -93,18 +185,24 @@ const Header = () => {
         <div className="Search-Box">
             <input placeholder="Search Product " onChange={(event) => dispatch(productSearch(event.target.value))} className="input-search"></input>
         </div>
-        {/* <Link to="/cart" className="link">
+        <span className="cart-container">
+            <Link to="/cart" className="link">
 
-            <span className="result">{result.length}</span>
-            
-            <span className="cart"><img src="images/cart.png" /></span>
+                <span className="result">{result.length}</span>
+
+                <span className="cart"><img src="images/cart.png" alt="" /></span>
 
 
-        </Link> */}
-
+            </Link>
+        </span>
+        
         <Mystickybar />
+       
+    </div>
 
-    </div>);
+ 
+    
+    );
 }
 
 export default Header;

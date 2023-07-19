@@ -2,8 +2,7 @@ import { Button } from "@mui/material";
 
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { emptyCart } from "../redux/action";
-import { TextFieldProps } from "@mui/material";
+import { emptyCart,remove_from_cart } from "../redux/action";
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -17,7 +16,7 @@ const Cart = () => {
   let amount = cartData.length && cartData.map(item => item.price).reduce((prev, next) => prev + next)
   console.warn(amount)
   return (
-    <div  >
+    <div  className="cartbody">
       <div className="w3-pannel w3-center w3-medium w3-margin">
         
         <span className="w3-red w3-padding w3-margin  w3-large w3-round-xxlarge">Your Shopping Cart</span>
@@ -32,7 +31,7 @@ const Cart = () => {
                 </span>
             </span>
    
-        <Link to="/" className="w3-right w3-hide-small w3-hide-medium   w3-margin-right"><Button variant="text"  color="error" startIcon={<ArrowBackIcon />}>Go to Products Page</Button></Link>
+        <Link to="/products" className="w3-right w3-hide-small w3-hide-medium   w3-margin-right"><Button variant="text"  color="error" startIcon={<ArrowBackIcon />}>Go to Products Page</Button></Link>
         <span className="w3-hide-small w3-hide-medium w3-right"><Button variant="text" onClick={() => dispatch(emptyCart())}  color="error" startIcon={<DeleteIcon/>} >EMPTY_CART</Button></span>
      
       </div>
@@ -45,6 +44,7 @@ const Cart = () => {
             <td>Brand</td>
             <td>Category</td>
             <td>Item</td>
+            <td>Remove</td>
           </tr>
           {
             cartData.map((item) => <tr key={item.id}>
@@ -55,14 +55,15 @@ const Cart = () => {
               <td>{item.category}</td>
               <td><img src={item.photo} alt="" width={"50px"} height={"50px"} />
               </td>
-            </tr>)
+              <td ><div onClick={() => dispatch(remove_from_cart(item.id)) } className="cart-remove-button">X</div></td>
+            </tr>) 
           }
         </table>
         <div className="price-details">
           <div className="adjust-price"><span>Amount  </span>  <span>{amount}</span></div>
           <div className="adjust-price"><span>Discount</span><span>{amount / 10}</span></div>
           <div className="adjust-price"><span>Tax     </span><span>{amount * 15 / 100}</span></div>
-          <div className="adjust-price"><span>Total   </span><span>{amount - (amount / 10) + (amount * 15 / 100)}</span></div>
+          <div className="adjust-price"><span>Total   </span><span>{(amount - (amount / 10) + (amount * 15 / 100)).toFixed(2)}</span></div>
 
         </div>
 

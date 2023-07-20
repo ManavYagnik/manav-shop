@@ -1369,7 +1369,7 @@ input[type=submit]:hover {
 }
 
 .individual-product{
-  text-align: center;
+  text-align: start;
   font-weight: bolder;
   font-size: larger;
 }

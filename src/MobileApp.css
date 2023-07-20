@@ -185,7 +185,7 @@
    /* fortune soya oil */
    .fso-banner {
      flex-direction: column;
-     /* flex-wrap: wrap; */
+     flex-wrap: wrap;
    }
 
 

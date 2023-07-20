@@ -14,7 +14,7 @@ function Fortunesoyaoil() {
             <div class="fso-container"> 
                 <div class="fso-banner">
                     <div class="fso-item">
-                        <h2>Fortune Soya Health <br />Oil</h2>
+                        <h2>Fortune Soya Health Oil</h2>
                         <p > Give your health the power of Soyabeans with Fortune Soya Health Oil.
                             A pioneer in refined oils for the last 20 years, Fortune’s unique nutri-lock
                             action not just adds extra flavour to your foods but is rich in Vitamins,
@@ -34,6 +34,8 @@ function Fortunesoyaoil() {
 
                 <div class="fso-banner">
                     <div class="fso-item">
+                        <br />
+                        <br />
                         <img src="https://www.fortunefoods.com/wp-content/uploads/2022/12/soya-oil.jpg" width="300px" alt=''/>
                         
                     </div>

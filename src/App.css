@@ -129,13 +129,29 @@
 
 .cartbody{
   min-height: 100vh;
+  
+  
 }
+
+.cartbody-header{
+ display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 16px;
+
+} 
+.cartbody-header>span{
+  margin: 10px;
+  
+}
+
+
 .cart-remove-button{
   background-color: red;
   text-align: center;
   
   width: 20px;
-  margin: auto;
+  
 
   cursor: grab;
  
@@ -144,6 +160,13 @@
 
 
 
+}
+
+
+.individual-product-color>button{
+  margin-left: 10px;
+  border: none;
+  width: 40px;
 }
 
 
@@ -890,8 +913,42 @@ input[type=submit]:hover {
 .product-item{
   border: 1px solid #ccc;
   padding: 20px;
-    margin: 20px;
+  margin: 20px;
 }
+
+.product-item-1{
+  border: 1px solid #ccc;
+  padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+ 
+}
+
+.product-item-information{
+  padding-left: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.individual-product-name{
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+
+.individual-product-color{
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.cart-product-container{
+  
+  width: 70%;
+  border: 2px solid;
+}
+
 
 .btnAddProcuct{
     background-color: rgb(66, 125, 7);
@@ -904,6 +961,36 @@ input[type=submit]:hover {
 
 
 }
+
+
+
+.cart-body-header-text-btn{
+  background-color: rgb(242, 64, 82);
+  color: white;
+  margin: 5px;
+  padding: 15px;
+  border: none;
+  width: 200px;
+  border-radius: 20px 20px 20px 20px;
+
+
+}
+
+.btnAddProcuct-1{
+  background-color: rgb(66, 125, 7);
+  color: white;
+  margin: 5px;
+  padding: 4px;
+  border: none;
+  width: 200px;
+  border-radius: 0 20px 0 20px;
+ 
+  font-size: 15px;
+
+
+}
+
+
 .btnRemoveProcuct{
     background-color: rgb(242, 64, 82);
     color: white;
@@ -912,6 +999,19 @@ input[type=submit]:hover {
     border: none;
     width: 100px;
     border-radius: 0 20px 0 20px;
+
+}
+
+
+.btnRemoveProcuct-1{
+  background-color: rgb(242, 64, 82);
+  color: white;
+  margin: 5px;
+  padding: 4px;
+  font-size: 15px;
+  border: none;
+  width: 150px;
+  border-radius: 0 20px 0 20px;
 
 }
 
@@ -925,6 +1025,7 @@ input[type=submit]:hover {
     display: flex;
     margin-left: 30px;
     margin-right: 30px;
+    flex-direction: row;
   }
   .cart-page-container table{
     flex: 65%;
@@ -937,6 +1038,7 @@ input[type=submit]:hover {
   .price-details{
     flex: 35%;
     margin: 0px 30px;
+    border: 2px;
   }
   .price-details .adjust-price{
     display: flex;
@@ -944,6 +1046,7 @@ input[type=submit]:hover {
       margin-bottom: 10px;
       padding-bottom: 10px;
       border-bottom: 1px solid #ddd;
+      
   }
   .price-details .adjust-price span{
     font-size: 20px;
@@ -1270,3 +1373,5 @@ input[type=submit]:hover {
   font-weight: bolder;
   font-size: larger;
 }
+
+

@@ -13,6 +13,49 @@ function Products() {
   const Loading = useSelector((state)=> state.isloading.loading)
 
   useEffect(() => { dispatch(productList()) }, [])
+
+  const cartData = useSelector((state) => state.cartData);
+ 
+
+  const mergeCartItems = (data) =>{
+   
+      const mergedItems =[];
+
+      for(let item of data){
+        const existingItem = mergedItems.find(
+          (mergedItems) => mergedItems.id === item.id
+          );
+
+        if(existingItem) {
+          existingItem.quantity += 1;
+        }else{
+          mergedItems.push({
+            id: item.id,
+            name:item.name,
+            price:item.price,
+            img:item.img,
+            quantity: 1,
+            photo:item.photo
+          });
+        }
+          
+    }
+    for (let item of mergedItems) {
+      for (let item of mergedItems) {
+        const eachItemPrice = item.price;
+        item.totalprice = item.quantity * eachItemPrice;
+      }
+      
+    }
+    return mergedItems;
+
+
+};
+
+  const mergedCartData = mergeCartItems(cartData);
+
+
+
   return (
     <div className='product-page'>
       <div className="products-dropdown">
@@ -48,6 +91,6 @@ function Products() {
       </div>
     </div>
   );
-}
 
+}
 export default Products;

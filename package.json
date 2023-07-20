@@ -17,8 +17,8 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.12.1",
     "react-scripts": "^5.0.1",
-    "redux-saga": "^1.2.3",
-    "web-vitals": "^2.1.4"
+    "redux-saga": "^1.2.3"
+    
   },
   "scripts": {
     "start": "react-scripts start",

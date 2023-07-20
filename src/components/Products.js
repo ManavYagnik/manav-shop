@@ -61,10 +61,10 @@ function Products() {
     <div className='product-page'>
       <div className="products-dropdown">
        
-      <button  className='btn'onClick={() => dispatch(productList())}>All Products</button>
-          <button className='btn' onClick={() => dispatch(productSearchByCategory('oil'))}>Edible Oils</button>
-          <button  className='btn'onClick={() => dispatch(productSearchByCategory('Foods'))}>Foods</button>
-          <button className='btn'onClick={() => dispatch(productSearchByCategory('ReadyToCook'))}>Ready to Cook</button>
+      <button  className='product-page-btn'onClick={() => dispatch(productList())}>All Products</button>
+          <button className='product-page-btn' onClick={() => dispatch(productSearchByCategory('oil'))}>Edible Oils</button>
+          <button  className='product-page-btn'onClick={() => dispatch(productSearchByCategory('Foods'))}>Foods</button>
+          <button className='product-page-btn'onClick={() => dispatch(productSearchByCategory('ReadyToCook'))}>Ready to Cook</button>
         
    
       </div>

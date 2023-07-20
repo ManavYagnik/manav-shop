@@ -28,8 +28,9 @@ function Fortunesoyaoil() {
                         <button  className="btnAddProcuct" onClick={() => dispatch(addToCart(data[19]))}>Add to cart</button>
                         <button  className="btnRemoveProcuct" onClick={() => dispatch(remove_from_cart(data[19].id))}>Remove</button>
                     </div>
-                </div></div>
-
+                </div>
+                
+                </div>
 
                 <div class="fso-banner">
                     <div class="fso-item">
@@ -55,7 +56,7 @@ function Fortunesoyaoil() {
 
 
 
-           
+                
             </div>
         </>
     )

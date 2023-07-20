@@ -55,6 +55,11 @@
       
    
   }
+
+  .product-item-1>img{
+    width: 100px;
+    height: auto;
+  }
   
 
 
@@ -172,7 +177,7 @@
    /* fortune soya oil */
    .fso-banner {
      flex-direction: column;
-     flex-wrap: wrap;
+     /* flex-wrap: wrap; */
    }
 
 

@@ -180,14 +180,14 @@
 .result{
   margin-right: 20px;
   position: relative;
-  top: -23px;
+  top: -14px;
   right: -69px;
   background-color:  red;
   
  
   color: white;
   padding: 5px 10px 5px 10px;
-  border-radius: 100%;
+  border-radius: 80%;
 
 }
 
@@ -497,8 +497,9 @@ height: 300px;
 }  
 
 .text{
-padding: 10px;
+padding: 16px;
 font-size: smaller;
+font-weight: bolder;
 
 }
 .playbutton>button{
@@ -856,7 +857,7 @@ input[type=submit]:hover {
  .btn-level{
   background-color: red;
   color: white;
-  font-size: 12px;
+  font-size: 16px;
   padding: 20px;
   border: none;
   border-radius: 0px 20px 0px 20px;
@@ -916,6 +917,8 @@ input[type=submit]:hover {
   margin: 20px;
 }
 
+
+
 .product-item-1{
   border: 1px solid #ccc;
   padding: 20px;
@@ -924,6 +927,8 @@ input[type=submit]:hover {
     flex-direction: row;
  
 }
+
+
 
 .product-item-information{
   padding-left: 10%;
@@ -1362,7 +1367,7 @@ input[type=submit]:hover {
 
 .loader{
   position:absolute;
-  top:100px;
+  top:300px;
   width: 100%;
   text-align: center;
   z-index: 100;

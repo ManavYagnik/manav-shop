@@ -4,6 +4,7 @@ import { productList, productSearchByCategory } from '../redux/productAction';
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import Myloader from './Myloader';
+import Productcontainer from './Productcontainer';
 
 function Products() {
   const dispatch = useDispatch();
@@ -72,7 +73,7 @@ function Products() {
       {/* <div>
       <button onClick={() => dispatch(emptyCart())}>Empty Cart</button>
       </div> */}
-      <div className='product-container'>
+      {/* <div className='product-container'>
         {
           data.map((item) => <div className='product-item'>
             <img src={item.photo} alt="" width={'150px'} height={'170px'} />
@@ -88,7 +89,9 @@ function Products() {
             </div>
           </div>)
         }
-      </div>
+      </div> */}
+
+      { !Loading && <Productcontainer />}
     </div>
   );
 

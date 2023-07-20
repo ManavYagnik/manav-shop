@@ -60,13 +60,13 @@ function Products() {
   return (
     <div className='product-page'>
       <div className="products-dropdown">
-        <button className="products-dropbtn">Categories</button>
-        <div className="products-dropdown-content">
-          <button onClick={() => dispatch(productSearchByCategory('oil'))}>Edible oils</button><br />
-          <button onClick={() => dispatch(productSearchByCategory('Foods'))}>Foods</button><br />
-          <button onClick={() => dispatch(productSearchByCategory('ReadyToCook'))}>Ready to Cook</button><br />
-          <button onClick={() => dispatch(productList())}>All Products</button><br />
-        </div>
+       
+      <button  className='btn'onClick={() => dispatch(productList())}>All Products</button>
+          <button className='btn' onClick={() => dispatch(productSearchByCategory('oil'))}>Edible Oils</button>
+          <button  className='btn'onClick={() => dispatch(productSearchByCategory('Foods'))}>Foods</button>
+          <button className='btn'onClick={() => dispatch(productSearchByCategory('ReadyToCook'))}>Ready to Cook</button>
+        
+   
       </div>
        { Loading && < Myloader />}
 

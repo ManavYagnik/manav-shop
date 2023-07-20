@@ -40,7 +40,15 @@
 
 
    }
-
+     .products-dropdown {
+    width:100%;
+    position: relative;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+  }
 
    .product-item-1{
   

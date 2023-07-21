@@ -128,6 +128,7 @@
 
 
 }
+.product-page-btn.active_btn,
 .product-page-btn:hover{
   color: white;
   background-color: green;

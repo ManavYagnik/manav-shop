@@ -2,13 +2,14 @@ import { addToCart, emptyCart, remove_from_cart } from '../redux/action';
 import { useDispatch } from 'react-redux'
 import { productList, productSearchByCategory } from '../redux/productAction';
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Myloader from './Myloader';
 import Productcontainer from './Productcontainer';
 
 function Products() {
   const dispatch = useDispatch();
   let data = useSelector((state) => state.productData);
+  const [activeBtn, setActiveBtn] = useState(0)
   console.warn("data in main component", data);
   console.log("one item",data[1]);
   const Loading = useSelector((state)=> state.isloading.loading)
@@ -61,10 +62,25 @@ function Products() {
     <div className='product-page'>
       <div className="products-dropdown">
        
-      <button  className='product-page-btn'onClick={() => dispatch(productList())}>All Products</button>
-          <button className='product-page-btn' onClick={() => dispatch(productSearchByCategory('oil'))}>Edible Oils</button>
-          <button  className='product-page-btn'onClick={() => dispatch(productSearchByCategory('Foods'))}>Foods</button>
-          <button className='product-page-btn'onClick={() => dispatch(productSearchByCategory('ReadyToCook'))}>Ready to Cook</button>
+      <button  className={`product-page-btn ${activeBtn===0 ? "active_btn" : ""}`} onClick={() => {
+        dispatch(productList());
+        setActiveBtn(0);
+      }}>All Products</button>
+
+      <button className={`product-page-btn ${activeBtn===1 ? "active_btn" : ""}`} onClick={() => {
+        dispatch(productSearchByCategory('oil'));
+        setActiveBtn(1);
+        }}>Edible Oils</button>
+      
+      <button className={`product-page-btn ${activeBtn===2 ? "active_btn" : ""}`} onClick={() => {
+        dispatch(productSearchByCategory('Foods'));
+        setActiveBtn(2);
+        }}>Foods</button>
+      
+      <button className={`product-page-btn ${activeBtn===3 ? "active_btn" : ""}`} onClick={() => {
+        dispatch(productSearchByCategory('ReadyToCook'));
+        setActiveBtn(3)
+        }}>Ready to Cook</button>
         
    
       </div>

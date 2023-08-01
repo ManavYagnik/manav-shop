@@ -27,7 +27,7 @@ const Contactform = () => {
         const newUser = { ...addNewUser };
         console.log("Form Submited", newUser);
 
-        const res = fetch(`https://my-mongo-db-api.onrender.com/api/contacts`, {
+        const res = fetch(`https://my-mongo-db-api.onrender.com/api/contacts/post`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...addNewUser })
